@@ -113,7 +113,6 @@ function App(){
           </Button>
 
 
-
           <Button
             variant="outlined"
             onClick={() => setSelectedScreen("certification")}
