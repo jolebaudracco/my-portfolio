@@ -3,6 +3,7 @@ import './App.css'
 import AboutMe from './components/AboutMe'
 import Home from './components/Home'
 import Certifications from './components/Certifications'
+import Projects from './components/Projects'
 import Box from '@mui/material/Box'
 import NavBar from './components/NavBar'
 
@@ -29,6 +30,7 @@ function App(){
         {selectedScreen === "home" && <Home /> }
         {selectedScreen === "about me" && <AboutMe /> }
         {selectedScreen === "certifications" && <Certifications /> }
+        {selectedScreen === "projects" && <Projects /> }
         <NavBar setSelectedScreen={setSelectedScreen} />
       </Box>
     </>
