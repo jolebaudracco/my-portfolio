@@ -3,42 +3,51 @@ import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import photo from '../assets/photo.jpg';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function Home() {
   return (
     <Box
       sx={{
-        // border: "1px solid #0c4083",
-        // borderRadius: "30px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "40px",
-        marginTop: "auto",
-        marginBottom: "30px",
-        // backgroundColor: "rgba(72, 69, 69, 0)",
-        // backdropFilter: "blur(2px)",
-        width: "80%",
+        mt: 8,
+        // border:'1px solid red',
+        animation: "fadeIn 2s ease-in-out",
+        borderRadius: "20px",
+        backgroundColor: "rgba(0, 0, 0, 0.35)",
+        backdropFilter: "blur(6px)",
+        boxShadow: "0 0 30px rgba(0, 0, 0, 0.9)",
       }}
-    >
-      {/* Sección 1: Avatar + Nombre */}
+      >
+      {/* Contenedor con fondo oscuro sutil */}
       <Box
         sx={{
+          padding: "40px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginBottom: "40px",
+          width: "950px",
+          maxWidth: "950px"
         }}
       >
+        {/* Avatar y nombre */}
         <Avatar
           alt="photo"
           src={photo}
           sx={{
-            width: 180,
-            height: 180,
+            width: 280,
+            height: 280,
             marginBottom: "20px",
-            border: "3px solid #00e0ff",
-            boxShadow: "0 0 15px #00e0ff, 0 0 25px #00e0ff",
+            border: "3px solid rgba(128, 131, 133, 0.98)",
+            boxShadow: "0 0 20px rgba(128, 131, 133, 0.98), 0 0 40px rgba(128, 131, 133, 0.98)",
+            transition: "transform 0.3s ease-in-out",
+            '&:hover': {
+              transform: 'scale(1.05)'
+            }
           }}
         />
 
@@ -46,7 +55,7 @@ function Home() {
           sx={{
             fontSize: "40px",
             marginBottom: "10px",
-            color: "#ffffff",
+            color: "#eeeeee",
             fontFamily: "'Orbitron', sans-serif",
             textShadow: "0 0 10px #000, 0 0 20px #00e0ff",
             fontWeight: 700,
@@ -55,51 +64,85 @@ function Home() {
         >
           Hi! I'm Jorgelina Baudracco
         </Typography>
-      </Box>
 
-      {/* Sección 2: Descripción */}
-      <Box
-        sx={{
-          marginBottom: "30px",
-          textAlign: "center",
-          maxWidth: "700px",
-          backgroundColor: "rgba(72, 69, 69, 0)",
-          backdropFilter: "blur(1px)",
-        }}
-      >
         <Typography
           sx={{
-            fontSize: "30px",
-            color: "#ffffff",
+            fontSize: "24px",
+            color: "#eeeeee",
             fontFamily: "'Orbitron', sans-serif",
             fontWeight: 600,
             textAlign: "center",
-            textShadow: "0 0 5px #00e0ff",
+            mt: 4,
+            textShadow: "0 0 6px #000"
           }}
         >
-          I'm a Full Stack Developer with a passion for creating dynamic and responsive web applications.
+          Full Stack Developer | QA Manual
         </Typography>
-      </Box>
 
-      {/* Sección 3: Botón */}
-      <Box>
-        <Button
-          variant="outlined"
+        <Typography
           sx={{
-            color: "#00e0ff",
-            border: "2px solid #00e0ff",
-            textShadow: "0 0 5px rgba(0, 225, 255, 0.98)",
-            padding: "10px 20px",
-            borderColor: "#00e0ff",
+            fontSize: "18px",
+            color: "#cccccc",
+            fontStyle: "italic",
+            mt: 2,
             fontFamily: "'Orbitron', sans-serif",
+            opacity: 0.9,
+            textShadow: "0 0 3px #000"
+          }}
+        >
+          "Code with purpose, create with passion."
+        </Typography>
+
+        {/* Descripción */}
+        <Typography
+          sx={{
+            fontSize: "24px",
+            color: "#eeeeee",
+            fontFamily: "'Nunito Sans', sans-serif",
+            fontWeight: 600,
+            textAlign: "center",
+            mt: 4,
+            mb: 4,
+            textShadow: "0 0 6px #000"
+          }}
+        >
+          I love building clean, interactive, and accessible web experiences that solve real-world problems.
+        </Typography>
+
+        {/* Botón */}
+        <Button
+          variant="contained"
+          sx={{
+            color: "#000",
+            backgroundColor: "#eeeeee",
+            padding: "10px 25px",
+            fontFamily: "'Orbitron', sans-serif",
+            fontWeight: 600,
+            letterSpacing: "1px",
+            borderRadius: "30px",
+            textTransform: "uppercase",
             '&:hover': {
               backgroundColor: "#00e0ff",
               color: "#000",
+              boxShadow: "0 0 10px #00e0ff",
             },
           }}
         >
           Contact Me!
         </Button>
+
+        {/* Íconos sociales */}
+        <Box sx={{ display: 'flex', gap: 3, mt: 4 }}>
+          <a href="https://github.com/jolebaudracco" target="_blank" rel="noopener noreferrer">
+            <GitHubIcon sx={{ fontSize: 40, color: "#eeeeee", '&:hover': { color: "#00e0ff" } }} />
+          </a>
+          <a href="mailto:yole126@gmail.com">
+            <EmailIcon sx={{ fontSize: 40, color: "#eeeeee", '&:hover': { color: "#00e0ff" } }} />
+          </a>
+          <a href="https://www.linkedin.com/in/jole-baudracco/" target="_blank" rel="noopener noreferrer">
+            <LinkedInIcon sx={{ fontSize: 40, color: "#eeeeee", '&:hover': { color: "#00e0ff" } }} />
+          </a>
+        </Box>
       </Box>
     </Box>
   );
